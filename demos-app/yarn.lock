@@ -1458,6 +1458,40 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
+"@primeng/themes@^20.1.2":
+  version "20.1.2"
+  resolved "https://registry.yarnpkg.com/@primeng/themes/-/themes-20.1.2.tgz#a7296711bd66bed274b0fef39ef14dbc3c654bde"
+  integrity sha512-OwTRQqt02DS3rppxBxO9lLAujScEgEhgLdyr12ETMVZUyJJSH+mgwVPJn4DN4JXyAWVqGYxVFcjsIaRtrxGXwQ==
+  dependencies:
+    "@primeuix/styled" "^0.7.2"
+    "@primeuix/themes" "^1.2.3"
+
+"@primeuix/styled@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@primeuix/styled/-/styled-0.7.2.tgz#36cfe3e743559ef5c31b0e87083fb05a26993ec6"
+  integrity sha512-tIJ6byZezTYZ9YUICNSidQHOIQOQL3zeUgjwiX0JnBTK3+WCvy4DyCBcrJ94RtiX0WGFZSYNvaGaFkTo4jU8FQ==
+  dependencies:
+    "@primeuix/utils" "^0.6.1"
+
+"@primeuix/styles@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@primeuix/styles/-/styles-1.2.3.tgz#d7b80cf9a05503deaf8b11db6fd74c0155a8ea3f"
+  integrity sha512-+KwmQsLTYgVAqFADmO252btz40lstPML6r4QMNjxz4gLNCKVW3kPR0/aCouQx6/21+boXG1P68tu8Zk3FAKr2w==
+  dependencies:
+    "@primeuix/styled" "^0.7.2"
+
+"@primeuix/themes@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@primeuix/themes/-/themes-1.2.3.tgz#b03fd00613a0749953311fde21630a9317753d81"
+  integrity sha512-GLAU2h6lhgln2w10EQalUQlgwbgQ0xZoIOLMNGfIvqU4O09L282P7rwKCKQksvAGAFt1GoO/Q1NgBSxnttr7iA==
+  dependencies:
+    "@primeuix/styled" "^0.7.2"
+
+"@primeuix/utils@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@primeuix/utils/-/utils-0.6.1.tgz#34af8e05aa9a142bf3c290381b5e104dc15e52b5"
+  integrity sha512-tQL/ZOPgCdD+NTimlUmhyD0ey8J1XmpZE4hDHM+/fnuBicVVmlKOd5HpS748LcOVRUKbWjmEPdHX4hi5XZoC1Q==
+
 "@rolldown/binding-android-arm64@1.0.0-beta.32":
   version "1.0.0-beta.32"
   resolved "https://registry.yarnpkg.com/@rolldown/binding-android-arm64/-/binding-android-arm64-1.0.0-beta.32.tgz#02de9d01a6b9ac398e19c08f233f3cffd9e659e8"
@@ -5568,6 +5602,16 @@ pretty-format@^29.7.0:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
+primeng@^20.1.2:
+  version "20.1.2"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-20.1.2.tgz#ca5808bf940a2c818b3b0241a8368f4c14031c9b"
+  integrity sha512-0+yxDKTTUc4g5d4Kp2/5g/MsE2+GnzpdBkEEM8WxP9ZvkxfFJ4WR9AxQYWgnzPD2UNWATPxuW1gwLgoh9D5FSA==
+  dependencies:
+    "@primeuix/styled" "^0.7.2"
+    "@primeuix/styles" "^1.2.3"
+    "@primeuix/utils" "^0.6.1"
+    tslib "^2.3.0"
+
 proc-log@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/proc-log/-/proc-log-5.0.0.tgz#e6c93cf37aef33f835c53485f314f50ea906a9d8"
@@ -6335,6 +6379,11 @@ synckit@^0.11.7:
   integrity sha512-MeQTA1r0litLUf0Rp/iisCaL8761lKAZHaimlbGK4j0HysC4PLfqygQj9srcs0m2RdtDYnF8UuYyKpbjHYp7Jw==
   dependencies:
     "@pkgr/core" "^0.2.9"
+
+tailwindcss-primeui@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-primeui/-/tailwindcss-primeui-0.6.1.tgz#fcb74738e80d4253c14521114773f5ce638c6ee8"
+  integrity sha512-T69Rylcrmnt8zy9ik+qZvsLuRIrS9/k6rYJSIgZ1trnbEzGDDQSCIdmfyZknevqiHwpSJHSmQ9XT2C+S/hJY4A==
 
 tailwindcss@4.1.13, tailwindcss@^4.1.13:
   version "4.1.13"

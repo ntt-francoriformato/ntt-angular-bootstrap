@@ -1,0 +1,189 @@
+@import '../tailwind.config.css';
+
+@layer primeng-overrides {
+  p-button {
+    /* DEFAULT INTERFACE TO BE USED */
+    --button-background: unset;
+    --button-border: var(--button-tint, transparent);
+    --button-text: unset;
+    --button-tint: var(--color-primary, var(--p-primary));
+    --button-radius: 4px;
+
+    [danger],
+    &:has(.p-button-danger) {
+      --button-tint: var(--color-critical);
+    }
+
+    [help],
+    &:has(.p-button-help) {
+      --button-tint: var(--color-help);
+    }
+
+    [info],
+    &:has(.p-button-info) {
+      --button-tint: var(--color-info);
+    }
+
+    &[secondary],
+    &:has(.p-button-secondary) {
+      --button-tint: var(--color-secondary);
+    }
+
+    &[tertiary] {
+      --button-tint: var(--color-tertiary);
+    }
+
+    [success],
+    &:has(.p-button-success) {
+      --button-tint: var(--color-ok);
+    }
+
+    [warning],
+    &:has(.p-button-warn) {
+      --button-tint: var(--color-warning);
+    }
+
+    [contrast],
+    &:has(.p-button-contrast) {
+      --button-tint: color-mix(in oklch, var(--color-surface), var(--color-primary) 30%);
+    }
+
+    .p-button {
+      --button-invert: light-dark(#fff, #000d);
+      --button-contrast: light-dark(#000d, #fff);
+      --button-overlay: 0%;
+      /* Color for solid bg, base for text and border */
+      --button-tint-base: color-mix(
+        in oklch,
+        var(--button-tint),
+        var(--button-contrast) var(--button-overlay)
+      );
+      --button-border-base: color-mix(
+        in oklch,
+        var(--button-tint-base) calc(var(--button-overlay) * 4.5),
+        var(--button-border)
+      );
+      --button-text-base: color-mix(in oklch, var(--button-tint-base), var(--button-contrast) 15%);
+      /* Base background for outline/text variants */
+      --button-background-base: color-mix(
+        in oklch,
+        var(--button-tint-base) var(--button-overlay),
+        var(--button-background, transparent)
+      );
+
+      background: var(--button-background-base);
+      border: 1px solid var(--button-border-base);
+      color: var(--button-text, var(--button-text-base));
+      border-radius: var(--button-radius);
+
+      &.p-button-text {
+        --button-border-base: transparent;
+      }
+
+      &.p-button-text,
+      &.p-button-outlined {
+        color: var(--button-text, var(--button-tint-base));
+        border: 1px solid var(--color-border);
+      }
+
+      &:not(.p-button-outlined, .p-button-text) {
+        background: var(--button-background, var(--button-tint-base));
+        color: var(--button-text, var(--button-invert));
+      }
+
+      &:not([disabled]) {
+        &:hover {
+          --button-overlay: 14%;
+        }
+
+        &:focus-visible {
+          --button-overlay: 20%;
+          outline: 1px solid var(--button-border-base);
+        }
+
+        &:active {
+          --button-overlay: 26%;
+        }
+      }
+    }
+  }
+}
+
+@layer app {
+  html {
+    p-button {
+      .p-button:not([iconOnly]) {
+        padding: 2px 4px;
+      }
+
+      &[iconOnly],
+      .p-button-icon-only {
+        --p-button-icon-only-width: 2.25rem;
+        --p-button-padding-x: 0.5rem;
+        aspect-ratio: 1/1;
+
+        button {
+          height: 32px;
+        }
+      }
+
+      &[primary] {
+        --button-tint: var(--color-primary-soft);
+        --button-text: var(--color-text-cta);
+      }
+
+      &[textBrand] {
+        --button-text: var(--color-brand) !important;
+      }
+
+      &[surface] {
+        --button-background: var(--color-surface-variant);
+        --button-text: var(--color-text);
+        --button-border: var(--color-border);
+      }
+
+      &[tertiary] {
+        --button-tint: var(--color-tertiary);
+      }
+
+      &[semibold] {
+        font-size: var(--font-weight-semibold);
+      }
+
+      &[search] {
+        --button-text: var(--color-text);
+
+        button {
+          padding: calc(2.5 * var(--spacing));
+        }
+      }
+
+      &[blueOnSurface] {
+        --button-border: transparent;
+        --button-text: var(--color-text-rest);
+        --button-tint: var(--color-surface-secondary-soft);
+
+        &:hover {
+          --button-text: var(--color-text-soft);
+          --button-tint: var(--color-surface-secondary);
+          --button-border: var(--color-secondary-soft) !important;
+        }
+
+        &:active,
+        &.active {
+          --button-text: light-dark(
+            var(--color-tertiary),
+            color-mix(in oklch, var(--color-tertiary), white)
+          );
+          --button-border: var(--color-border-hover);
+
+          button {
+            font-weight: 500;
+            background-color: var(--color-surface-secondary-soft);
+            border: 1px solid var(--button-border);
+          }
+        }
+      }
+    }
+  }
+}

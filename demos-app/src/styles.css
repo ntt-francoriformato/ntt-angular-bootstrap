@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@layer primeui, theme, base, components, utilities, keyframes, primeng, primeng-overrides, app;
+
+/* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
+@plugin 'tailwindcss-primeui';
+@import './tailwind.config.css';
+
+@import './theme/_buttons.css';
+
+@layer app {
+  /* Body */
+  body {
+    @apply h-screen w-screen m-0;
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+  }
+}

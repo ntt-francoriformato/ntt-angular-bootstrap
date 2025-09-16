@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+
+  /* Brand colors */
+  --color-brand: var(--p-primary-500);
+
+  --color-primary-soft: light-dark(var(--p-primary-500), var(--p-primary-600));
+
+  /* Colors of NTT Brand from existing webpages */
+  --color-surface: #ffffff;
+  --color-surface-variant: #56a1c6;
+  --color-surface-background: #ebebed;
+  --color-surface-rest: #e7e5e4;
+  --color-surface-active: #cbfbf1;
+
+  --color-border: var(--color-zinc-200);
+
+  --color-text: #18181b;
+  --color-text-cta: #ffffff;
+  --color-text-rest: var(--color-zinc-200);
+  --color-text-disabled: var(--color-zinc-300);
+}
