@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import '../../../tailwind.config.css';
+
+:host {
+  @apply size-full;
+}
+
+.page {
+  @apply flex flex-col size-full;
+}
+
+header {
+  @apply flex items-center shrink-0 h-16 gap-3 px-3;
+  @apply border-b border-b-border;
+  @apply overflow-x-auto;
+}
+
+main {
+  @apply flex-1 flex flex-col overflow-hidden;
+}

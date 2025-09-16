@@ -1,0 +1,8 @@
+@if (translate.get('primeng') | async; as config) {
+  <router-outlet (activate)="primeNgConfig.setTranslation(config)"></router-outlet>
+} @else {
+  <ng-template #loadingTemplate> ... </ng-template>
+}
+
+<p-confirmDialog [closable]="false"></p-confirmDialog>
+<p-toast></p-toast>
