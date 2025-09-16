@@ -21,6 +21,7 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       theme,
     }),
+    provideAnimations(),
     importProvidersFrom([
       TranslateModule.forRoot({
         fallbackLang: localStorage.getItem('lang') ?? environment.defaultLang,
