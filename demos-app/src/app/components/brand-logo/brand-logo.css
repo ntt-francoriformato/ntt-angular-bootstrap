@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+@import '../../../tailwind.config.css';
+
+:host {
+  @apply select-none overflow-hidden h-6;
+
+  .wrapper {
+    @apply relative inline-block;
+
+    svg {
+      @apply h-6;
+
+      #logo {
+        @apply fill-brand;
+      }
+    }
+  }
+}
