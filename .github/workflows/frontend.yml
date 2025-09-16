@@ -1,0 +1,43 @@
+name: Frontend Checks
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+  pull_request:
+    paths:
+      - "demos-app/**"
+      - ".github/workflows/frontend.yml"
+
+defaults:
+  run:
+    working-directory: demos-app
+
+jobs:
+  build-frontend:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: corepack yarn install --frozen-lockfile
+      - name: Build app
+        run: corepack yarn run build
+
+  lint-app:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: corepack yarn install --frozen-lockfile
+      - name: Lint
+        run: corepack yarn run lint
+      - name: Prettier
+        run: corepack yarn run prettier
