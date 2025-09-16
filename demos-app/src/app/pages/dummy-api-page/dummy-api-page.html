@@ -1,0 +1,16 @@
+<p>dummy-api-page works!</p>
+
+@if (posts$.status() === 'resolved') {
+  <div class="max-w-1/2 max-h-[500px] mx-auto overflow-y-auto border border-border rounded-md p-1">
+    {{ posts$.value() | json }}
+  </div>
+} @else {
+  @switch (posts$.status()) {
+    @case ('loading') {
+      <span>{{ 'i18n.Common.loading' | translate }}</span>
+    }
+    @case ('error') {
+      <span>{{ 'i18n.Common.error' | translate }}</span>
+    }
+  }
+}
