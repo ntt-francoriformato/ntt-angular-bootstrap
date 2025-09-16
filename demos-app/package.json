@@ -11,7 +11,9 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier:fix": "npm run prettier -- --write",
     "prettier": "npx prettier . --check",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "regen:connectors:dummy": "rimraf src/connectors/dummy-json-api && ng-openapi-gen -c ng-openapi-gen-dummy.json",
+    "regen:connectors": "$npm_execpath regen:connectors:dummy"
   },
   "prettier": {
     "printWidth": 100,
