@@ -1,4 +1,5 @@
 {
+  "i18n.Common.helloMessage": "Hello NTT Data!",
   "primeng": {
     "dayNamesMin": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     "monthNames": [
