@@ -1,5 +1,7 @@
 {
-  "i18n.Common.helloMessage": "Ciao NTT Data!",
+  "i18n.Common.error": "Si è verificato un errore!",
+  "i18n.Common.loading": "Caricamento...",
+  "i18n.Common.title": "Angular Demos App",
   "primeng": {
     "dayNamesMin": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
     "monthNames": [
