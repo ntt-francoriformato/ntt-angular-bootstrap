@@ -1,0 +1,70 @@
+<p>table-page works!</p>
+
+<h2>{{ 'i18n.TablePage.staticTable' | translate }}</h2>
+<div class="max-w-1/2 max-h-[500px] mx-auto overflow-y-auto border border-border rounded-md p-1">
+  <app-table
+    #table
+    [value]="staticTableValues"
+    [isLoading]="false"
+    [sorting]="[]"
+    [showPagination]="false"
+  >
+    <!-- Non-sortable field -->
+    <ng-container appColumnDef>
+      <span *appCellHeaderDef>
+        {{ 'i18n.TablePage.Table.firstName' | translate }}
+      </span>
+      <span *appCellDef="table; let item">
+        {{ item.firstName }}
+      </span>
+    </ng-container>
+
+    <!-- Sortable field -->
+    <ng-container appColumnDef="familyName">
+      <span *appCellHeaderDef>
+        {{ 'i18n.TablePage.Table.familyName' | translate }}
+      </span>
+      <span *appCellDef="table; let item">
+        {{ item.familyName }}
+      </span>
+    </ng-container>
+
+    <ng-container appColumnDef>
+      <span *appCellHeaderDef>
+        {{ 'i18n.TablePage.Table.phoneNumber' | translate }}
+      </span>
+      <span *appCellDef="table; let item">
+        {{ item.phoneNumber }}
+      </span>
+    </ng-container>
+  </app-table>
+</div>
+
+<div class="my-8 mx-3 border border-border"></div>
+
+<h2>{{ 'i18n.TablePage.pagedResourceTable' | translate }}</h2>
+
+<!-- Mock search, without debounce and quite rough -->
+<input [(ngModel)]="query" placeholder="Search..." />
+
+<div class="max-w-1/2 max-h-[500px] mx-auto overflow-y-auto border border-border rounded-md p-1">
+  <app-paged-resource-table
+    #resourceTable
+    [pageRes]="posts$"
+    [emptyTitle]="'i18n.TablePage.mockTableNoItems' | translate"
+    [pagination]="pagination()"
+    (paginationChange)="pagination.set($event)"
+  >
+    <ng-container appColumnDef="name">
+      <ng-container *appCellHeaderDef>{{
+        'i18n.TablePage.Table.postTitle' | translate
+      }}</ng-container>
+      <span *appCellDef="resourceTable.table(); let item">{{ item.title }}</span>
+    </ng-container>
+
+    <ng-container appColumnDef>
+      <ng-container *appCellHeaderDef>{{ 'i18n.TablePage.Table.userId' | translate }}</ng-container>
+      <span *appCellDef="resourceTable.table(); let item">{{ item.userId }}</span>
+    </ng-container>
+  </app-paged-resource-table>
+</div>
