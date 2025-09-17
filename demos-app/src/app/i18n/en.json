@@ -2,6 +2,15 @@
   "i18n.Common.error": "An error occurred!",
   "i18n.Common.loading": "Loading...",
   "i18n.Common.title": "Angular Demos App",
+  "i18n.MainPage.Tabs.ngopenapiDemo": "NgOpenAPI demo",
+  "i18n.MainPage.Tabs.tableDemo": "Table wrapper demo",
+  "i18n.TablePage.pagedResourceTable": "Paged resource table",
+  "i18n.TablePage.staticTable": "Static table",
+  "i18n.TablePage.Table.familyName": "Family name",
+  "i18n.TablePage.Table.firstName": "First name",
+  "i18n.TablePage.Table.phoneNumber": "Phone number",
+  "i18n.TablePage.Table.postTitle": "Post title",
+  "i18n.TablePage.Table.userId": "User ID",
   "primeng": {
     "dayNamesMin": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     "monthNames": [
