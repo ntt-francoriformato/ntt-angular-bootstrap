@@ -1,0 +1,19 @@
+<app-table
+  [value]="pageRes().value()?.items ?? []"
+  [isLoading]="pageRes().isLoading()"
+  [sorting]="pagination().sorting"
+  [columns]="columns()"
+  [offset]="pagination().offset"
+  [limit]="pagination().limit"
+  [showPagination]="true"
+  (rowSelected)="rowSelected.emit($event)"
+>
+  <app-table-empty-message
+    [state]="pageRes().status()"
+    [colCount]="columns().length"
+    [rowCount]="5"
+    [emptyTitle]="emptyTitle()"
+    [emptyReason]="query() ? emptyQueryMessage()! : undefined"
+  >
+  </app-table-empty-message>
+</app-table>
