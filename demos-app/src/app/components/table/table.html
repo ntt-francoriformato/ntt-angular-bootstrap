@@ -1,0 +1,63 @@
+<p-table
+  #table
+  dataKey="id"
+  class="size-full flex flex-col"
+  [first]="offset()"
+  [lazy]="true"
+  [paginator]="showPagination()"
+  [rows]="limit()"
+  [multiSortMeta]="multiSortMeta()"
+  [totalRecords]="value().length"
+  [value]="value()"
+  (onLazyLoad)="onLazyLoad($event)"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      @for (column of effectiveColumns(); track $index) {
+        <th
+          [class.w-0]="column.shrink()"
+          [ngClass]="column.classes()"
+          [pSortableColumn]="column.name()"
+        >
+          <div
+            class="flex items-center"
+            [class.min-w-max]="column.shrink()"
+            [class.justify-center]="column.align() === 'center'"
+            [class.justify-end]="column.align() === 'end'"
+          >
+            <ng-container *ngTemplateOutlet="column.headerCell().template"></ng-container>
+            @if (column.name()) {
+              <p-sortIcon [field]="column.name()" />
+            }
+          </div>
+        </th>
+      }
+    </tr>
+  </ng-template>
+
+  <ng-template let-item pTemplate="body">
+    <tr (click)="rowSelected.emit(item)">
+      @for (column of effectiveColumns(); track $index) {
+        <td [ngClass]="column.classes()" [class.w-0]="column.shrink()">
+          @if (!isLoading()) {
+            <div class="flex items-center">
+              <ng-container
+                *ngTemplateOutlet="column.cell().template; context: { $implicit: item }"
+              ></ng-container>
+            </div>
+          } @else {
+            <p-skeleton></p-skeleton>
+          }
+        </td>
+      }
+    </tr>
+  </ng-template>
+
+  <ng-template #emptymessage pTemplate="emptymessage">
+    <ng-content select="app-table-empty-message,[emptyTable]"></ng-content>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <ng-content select="footer,[footer]" />
+  </ng-template>
+</p-table>

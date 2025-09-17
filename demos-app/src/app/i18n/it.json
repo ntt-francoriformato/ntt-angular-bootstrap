@@ -2,6 +2,15 @@
   "i18n.Common.error": "Si è verificato un errore!",
   "i18n.Common.loading": "Caricamento...",
   "i18n.Common.title": "Angular Demos App",
+  "i18n.MainPage.Tabs.ngopenapiDemo": "NgOpenAPI demo",
+  "i18n.MainPage.Tabs.tableDemo": "Table wrapper demo",
+  "i18n.TablePage.pagedResourceTable": "Tabella con paginazione e dati da stream",
+  "i18n.TablePage.staticTable": "Tabella con dati statici",
+  "i18n.TablePage.Table.familyName": "Cognome",
+  "i18n.TablePage.Table.firstName": "Nome",
+  "i18n.TablePage.Table.phoneNumber": "Telefono",
+  "i18n.TablePage.Table.postTitle": "Titolo del post",
+  "i18n.TablePage.Table.userId": "ID utente",
   "primeng": {
     "dayNamesMin": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
     "monthNames": [
