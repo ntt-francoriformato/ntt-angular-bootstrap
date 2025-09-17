@@ -15,4 +15,30 @@
     font-family: 'Inter', sans-serif;
     font-optical-sizing: auto;
   }
+
+  /* Tabs */
+  .tabs {
+    @apply flex items-end grow h-full;
+
+    .tab {
+      @apply flex items-center justify-center px-4 h-full gap-2;
+      @apply border-b-3 border-transparent;
+      @apply text-lg text-text-rest font-medium cursor-pointer transition-all;
+
+      &.active {
+        @apply text-text border-brand;
+      }
+
+      &.disabled {
+        @apply pointer-events-none opacity-50;
+      }
+
+      &:not(.active) {
+        &:hover,
+        &:focus-visible {
+          @apply hover:opacity-80 text-text border-brand/50;
+        }
+      }
+    }
+  }
 }

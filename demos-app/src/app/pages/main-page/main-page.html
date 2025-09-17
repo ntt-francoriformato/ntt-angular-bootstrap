@@ -2,6 +2,21 @@
   <header class="border-b border-b-border-light">
     <app-brand-logo />
     {{ 'i18n.Common.title' | translate }}
+
+    <ul class="tabs">
+      @for (route of routes; track $index) {
+        <li
+          #tab="routerLinkActive"
+          class="tab"
+          routerLinkActive
+          [class.disabled]="route.disabled"
+          [routerLink]="route.routerLink"
+          [class.active]="tab.isActive"
+        >
+          {{ route.label | translate }}
+        </li>
+      }
+    </ul>
   </header>
 
   <main>
