@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@import '../../../tailwind.config.css';
+
+:host {
+  @apply flex flex-col w-full h-fit overflow-y-auto;
+
+  p-table {
+    @apply h-full;
+
+    tr {
+      @apply relative whitespace-nowrap cursor-pointer;
+
+      &:hover {
+        @apply bg-brand/30;
+      }
+    }
+
+    th {
+      @apply p-2;
+      @apply border-b border-b-border;
+      @apply font-semibold text-text;
+
+      div {
+        @apply gap-2.5;
+      }
+    }
+
+    td {
+      @apply p-2;
+      @apply border-b border-r border-border;
+
+      &:last-child {
+        @apply border-r-0;
+      }
+
+      &:nth-last-child(2):has(+ td app-menu) {
+        @apply border-r-0;
+      }
+
+      .empty-message {
+        @apply flex size-full flex-col items-center justify-center gap-6;
+        @apply py-6;
+        @apply opacity-50;
+
+        img {
+          @apply w-36;
+        }
+      }
+    }
+
+    ::ng-deep p-paginator {
+      @apply mt-auto py-2;
+    }
+
+    /* This displays the empty message when the table is empty */
+    ::ng-deep tbody:has(app-table-empty-message:first-child) {
+      @apply h-72;
+    }
+  }
+}
+
+::ng-deep .p-datatable-thead {
+  @apply sticky top-[-2px] z-10 md:top-0;
+}
