@@ -8,6 +8,8 @@
 
 @import './theme/_buttons.css';
 
+@import '../src/gantt-lib/dist/frappe-gantt.css';
+
 @layer app {
   /* Body */
   body {
