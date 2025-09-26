@@ -1,0 +1,26 @@
+@let headerHeight = ganttHeaderHeight();
+@let rowHeight = ganttRowHeight();
+
+<div class="gantt-container">
+  @if (tasks().length) {
+    <div class="flex flex-row">
+      <div class="flex flex-col">
+        <!-- Take space for the header -->
+        <div [style.height]="headerHeight + 'px'"></div>
+
+        <!-- Labelled groups -->
+        @for (groupLabel of options().groups; track $index) {
+          <div
+            class="px-3 flex items-center justify-center border-b border-b-border"
+            [style.height]="rowHeight + 'px'">
+            {{ groupLabel }}
+          </div>
+        }
+      </div>
+
+      <div #gantt class="gantt-target"></div>
+    </div>
+  } @else {
+    <span>No tasks available!</span>
+  }
+</div>

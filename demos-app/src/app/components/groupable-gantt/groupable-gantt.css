@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+:host {
+  @apply size-full;
+}
+
+/* Hide edit buttons */
+::ng-deep .gantt-container .side-header {
+  @apply hidden;
+}
