@@ -28,5 +28,9 @@ export default class MainPageComponent {
       routerLink: 'table',
       label: 'i18n.MainPage.Tabs.tableDemo',
     },
+    {
+      routerLink: 'scheduler',
+      label: 'i18n.MainPage.Tabs.schedulerDemo',
+    },
   ];
 }

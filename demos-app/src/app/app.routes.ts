@@ -10,6 +10,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/dummy-api-page/dummy-api-page'),
       },
       {
+        path: 'scheduler',
+        loadComponent: () => import('./pages/scheduler-page/scheduler-page'),
+      },
+      {
         path: '',
         redirectTo: 'dummy-api',
         pathMatch: 'full',
